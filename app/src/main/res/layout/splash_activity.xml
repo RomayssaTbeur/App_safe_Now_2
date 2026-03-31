@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- ══════════════════════════════════ -->
+    <!-- Aegis Pulse Rings (fond décoratif) -->
+    <!-- ══════════════════════════════════ -->
+
+    <!-- Anneau externe -->
+    <View
+        android:id="@+id/pulse_ring_outer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.5"
+        android:background="@drawable/circle_thin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="1.4" />
+
+    <!-- Anneau moyen -->
+    <View
+        android:id="@+id/pulse_ring_mid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.57"
+        android:background="@drawable/circle_thin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="1.0" />
+
+    <!-- Anneau interne -->
+    <View
+        android:id="@+id/pulse_ring_inner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.6"
+        android:background="@drawable/circle_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.65" />
+
+    <!-- ══════════════════════════════════ -->
+    <!-- Contenu principal centré          -->
+    <!-- ══════════════════════════════════ -->
+
+    <!-- Logo container -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/logo_container"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginBottom="48dp"
+        android:elevation="24dp"
+        app:cardBackgroundColor="@color/background"
+        app:cardCornerRadius="28dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_brand_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:contentDescription="SafeNow logo"
+            android:src="@drawable/logo"
+            android:scaleType="fitCenter" />
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Titre principal -->
+    <TextView
+        android:id="@+id/tv_brand_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SafeNow"
+        android:textColor="@color/titre_principal"
+        android:textSize="40sp"
+        android:letterSpacing="-0.04"
+        app:layout_constraintBottom_toTopOf="@id/divider_group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Groupe séparateur + tagline -->
+    <LinearLayout
+        android:id="@+id/divider_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_subtitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="1dp"
+            android:alpha="0.6"
+            android:background="@color/sous_titre" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:text="THE VIGILANT ANCHOR"
+            android:textColor="@color/sous_titre"
+            android:textSize="13sp"
+            android:letterSpacing="0.25"
+            />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="1dp"
+            android:alpha="0.6"
+            android:background="@color/sous_titre" />
+
+    </LinearLayout>
+
+    <!-- Sous-titre -->
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your safety, anytime, anywhere"
+        android:textColor="@color/texte"
+        android:textSize="18sp"
+        android:alpha="0.65"
+
+        android:lineSpacingMultiplier="1.5"
+        app:layout_constraintTop_toBottomOf="@id/divider_group"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- ══════════════════════════════════ -->
+    <!-- Footer bas : "Establishing link"  -->
+    <!-- ══════════════════════════════════ -->
+
+    <LinearLayout
+        android:id="@+id/footer_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:text="Start"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:letterSpacing="0.08"
+            app:backgroundTint="@color/primary_button"
+            app:cornerRadius="28dp"
+            app:strokeColor="@color/border_primary_button"
+            app:strokeWidth="1dp"
+            android:layout_marginBottom="12dp" />
+
+
+
+    </LinearLayout>
+
+    <!-- Gradient overlay -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

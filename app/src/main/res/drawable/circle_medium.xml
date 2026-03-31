@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <!--  Couleur du contour  -->
+    <stroke android:width="2dp" android:color="@color/ring_border"/>
+    <!--  Couleur de remplissage identique au contour  -->
+    <solid android:color="@color/ring_color"/>
+
+
+</shape>

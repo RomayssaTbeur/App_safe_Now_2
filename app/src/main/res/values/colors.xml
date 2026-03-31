@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background">#FDF9EF</color>
+    <color name="titre_principal">#002A54</color>
+    <color name="sous_titre">#424750</color>
+    <color name="texte">#000000</color>
+    <color name="primary_button">#A7001E</color>
+
+
+    <color name="border_primary_button">#CF1335</color>
+    <color name ="ring_color">#E2E2D4</color>
+    <color name ="ring_border">#DCD6C3</color>
+
+
+    <color name ="ring_color_outer">#E9E9DC</color>
+    <color name="ring_border_outer">#E4D7B7</color>
+
+
+</resources>

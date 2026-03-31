@@ -1,0 +1,43 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+# Fichiers build
+/build/
+/app/build/
+
+# Fichiers générés par Android Studio
+/.idea/
+/*.iml
+
+# Fichiers de log
+*.log
+# Dossiers de dépendances
+/.gradle/
+/captures/
+
+# Cache et dossiers temporaires
+*.class
+*.jar
+*.war
+*.ear
+*.apk
+*.ap_
+*.dex
+# Fichiers de test et coverage
+*.keystore
+*.jks
+*.hprof
+*.env
+.cxx
+local.properties
