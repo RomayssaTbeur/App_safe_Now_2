@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_nav_custom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@color/white"
+    android:paddingTop="2dp"
+    android:paddingBottom="2dp"
+    android:paddingHorizontal="20dp"
+    android:gravity="center"
+    android:layout_gravity="bottom">
+
+    <!-- Home -->
+    <LinearLayout
+        android:id="@+id/nav_home"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_home"
+            app:tint="@color/sous_titre"
+            android:contentDescription="Home" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HOME"
+            android:textColor="@color/sous_titre"
+            android:textSize="9sp"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <!-- Contacts -->
+    <LinearLayout
+        android:id="@+id/nav_contacts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_group"
+            app:tint="@color/sous_titre"
+            android:contentDescription="Contacts" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONTACTS"
+            android:textColor="@color/sous_titre"
+            android:textSize="9sp"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <!-- SOS -->
+    <LinearLayout
+        android:id="@+id/nav_sos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_sos"
+            android:contentDescription="SOS" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SOS"
+            android:textColor="@color/primary_button"
+            android:textSize="9sp"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <!-- History -->
+    <LinearLayout
+        android:id="@+id/nav_history"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_history"
+            app:tint="@color/sous_titre"
+            android:contentDescription="History" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HISTORY"
+            android:textColor="@color/sous_titre"
+            android:textSize="9sp"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+    <!-- Checklist (Active) -->
+    <LinearLayout
+        android:id="@+id/nav_checklist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingVertical="8dp"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_check"
+            app:tint="@color/sous_titre"
+            android:contentDescription="Checklist" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CHECK LIST"
+            android:textColor="@color/sous_titre"
+            android:textSize="9sp"
+            android:letterSpacing="0.12"
+            android:layout_marginTop="4dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

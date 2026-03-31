@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--    splash-->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#353C3A</color>
@@ -10,7 +11,14 @@
     <color name="border_primary_button">#82ADEE</color>
     <color name ="ring_color">#1AFFFFFF</color>
     <color name="ring_border">#1AFFFFFF</color>
-
     <color name ="ring_color_outer">#0DFFFFFF</color>
     <color name="ring_border_outer">#0DFFFFFF</color>
+
+    <!--    simulation-->
+    <color name="hero_title_color">#E0E2E2</color>
+    <color name="body_text_color">#C1C9C7</color>
+    <color name="icon">#FFFFFF</color>
+    <color name="bar_bg">#33DBD8D8</color>
+
+
 </resources>
