@@ -1,3 +1,57 @@
 <resources>
     <string name="app_name">Safe_now_2</string>
+
+    <!-- Titres écran -->
+    <string name="alert_history">Alert History</string>
+    <string name="your_safety">Your Safety</string>
+    <string name="logbook">Logbook</string>
+    <string name="total_logs">TOTAL LOGS</string>
+    <string name="search_history">Search history…</string>
+    <string name="recent_activity">RECENT ACTIVITY</string>
+    <string name="september_2025">SEPTEMBER 2025</string>
+
+    <!-- Cartes -->
+    <string name="emergency_resolved">Emergency Resolved</string>
+    <string name="contacts_notified">Contacts Notified</string>
+    <string name="alert_cancelled">Alert Cancelled</string>
+    <string name="emergency_active">Emergency Active</string>
+    <string name="emergency_description">Sept 28, 2025 — SOS triggered and first responders dispatched.</string>
+    <string name="view_full_incident">VIEW FULL INCIDENT →</string>
+
+    <!-- Badges -->
+    <string name="badge_secured">SECURED</string>
+    <string name="badge_info">INFORMATIONAL</string>
+    <string name="badge_reset">MANUAL RESET</string>
+
+    <!-- Localisation -->
+    <string name="label_location">LOCATION</string>
+    <string name="loc_central_park">Central Park West, NYC</string>
+    <string name="loc_lower_east">Lower East Side, NYC</string>
+    <string name="loc_brooklyn">Brooklyn Heights, NY</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_history">History</string>
+    <string name="nav_contacts">Contacts</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Accessibilité -->
+    <string name="cd_back">Retour</string>
+    <string name="cd_filter">Filtrer</string>
+    <string name="cd_map_thumbnail">Aperçu carte</string>
+
+
+
+
+    <string name="checklist">Checklist</string>
+    <string name="vr_simulation">VR Simulation</string>
+    <string name="cd_profile">Profil</string>
+
+    <!-- Home screen -->
+    <string name="gps_active">GPS: ACTIVE</string>
+    <string name="permissions_active">PERMISSIONS: ACTIVE</string>
+    <string name="ready_to_send">Ready to send alert</string>
+    <string name="sos_subtitle">Your location and emergency profile are prepared. Hold to trigger.</string>
+    <string name="map_location">Central Park West</string>
+    <string name="map_subtitle">SafeZone: 0.4 miles away (Police Station Precinct 20)</string>
 </resources>

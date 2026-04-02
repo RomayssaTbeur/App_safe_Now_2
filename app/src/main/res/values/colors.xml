@@ -26,6 +26,23 @@
     <color name="icon">#000000</color>
 
 
+    <!-- Alert History – surfaces -->
+    <color name="surface_container_low">#F7F3E9</color>
+    <color name="surface_container_high">#ECE8DE</color>
+    <color name="surface_variant">#E6E2D8</color>
+    <color name="on_surface">#1C1C16</color>
+    <color name="on_surface_variant">#424750</color>
 
+    <!-- Alert History – accents -->
+    <color name="outline">#737781</color>
+    <color name="outline_variant">#C2C6D1</color>
+    <color name="nav_inactive">#5C615F</color>
+    <color name="tertiary">#451F00</color>
+    <color name="tertiary_on_container">#FC8F34</color>
+
+    <color name="location_row_color">#99FFFFFF</color>
+
+    <color name="nav_item_active_bg">#1A00407A</color>  <!-- bleu 10% -->
+    <color name="checklist">#012A54</color>
 
 </resources>
