@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="32dp">
+
+    <!-- Titre -->
+<!--    <TextView-->
+<!--        android:id="@+id/tv_login_title"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Connexion"-->
+<!--        android:textColor="@color/titre_principal"-->
+<!--        android:textSize="32sp"-->
+<!--        -->
+<!--        android:layout_marginTop="80dp"/>-->
+
+    <!-- Sous-titre -->
+    <!-- [FIREBASE] Remplacer par "Entrez votre numéro pour recevoir un code" -->
+<!--    <TextView-->
+<!--        android:id="@+id/tv_login_subtitle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Version de simulation"-->
+<!--        android:textColor="@color/texte"-->
+<!--        android:alpha="0.6"-->
+<!--        android:textSize="14sp"-->
+<!--        android:layout_marginTop="8dp"/>-->
+
+<!--    &lt;!&ndash; Champ téléphone &ndash;&gt;-->
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/til_phone"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Numéro de téléphone"-->
+<!--        -->
+<!--        android:layout_marginTop="48dp">-->
+
+<!--        &lt;!&ndash; [FIREBASE] Ce champ servira à saisir le numéro pour l'OTP &ndash;&gt;-->
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/et_phone"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:inputType="phone"/>-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!-- Bouton login -->
+    <!-- [FIREBASE] Texte → "Envoyer le code OTP" -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Se connecter"
+        android:textSize="16sp"
+        app:cornerRadius="28dp" />
+
+</LinearLayout>
