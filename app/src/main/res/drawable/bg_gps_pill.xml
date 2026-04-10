@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ──────────────────────────────────────────────────────────
+22
+     FICHIER 2 : bg_gps_pill.xml
+23
+     Pastille blanche pour la section coordonnées GPS
+24
+     dans la Location Status Card.
+25
+     ────────────────────────────────────────────────────────── -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+             android:shape="rectangle">
+<solid android:color="#99FFFFFF" />  <!-- blanc 60% opacité -->
+<stroke android:width="1dp" android:color="#66FFFFFF" />
+<corners android:radius="24dp" />
+</shape>

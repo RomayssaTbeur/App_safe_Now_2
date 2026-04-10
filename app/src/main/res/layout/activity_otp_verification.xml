@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/otp_background"
+    tools:context=".OtpVerificationActivity">
+
+    <!-- Background blob top-right -->
+    <View
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="-80dp"
+        android:layout_marginEnd="-80dp"
+        android:alpha="0.4"
+        android:background="@drawable/bg_blob_primary" />
+
+    <!-- Background blob bottom-left -->
+    <View
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginBottom="-80dp"
+        android:layout_marginStart="-80dp"
+        android:alpha="0.4"
+        android:background="@drawable/bg_blob_secondary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+
+        <!-- ══ TOP APP BAR ══════════════════════════════════════════ -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:paddingHorizontal="8dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                android:padding="8dp"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="@color/otp_accent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/space_grotesk"
+                android:letterSpacing="-0.03"
+                android:text="@string/app_name"
+                android:textColor="@color/otp_accent"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+        <!-- ══ SCROLL CONTENT ══════════════════════════════════════ -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="24dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp">
+
+                <!-- ── Shield Pulse ───────────────────────────────── -->
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="32dp">
+
+                    <!-- Halo externe -->
+                    <View
+                        android:id="@+id/view_pulse_outer"
+                        android:layout_width="128dp"
+                        android:layout_height="128dp"
+                        android:layout_gravity="center"
+                        android:alpha="0.5"
+                        android:background="@drawable/bg_pulse_outer" />
+
+                    <!-- Halo interne -->
+                    <View
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        android:alpha="0.7"
+                        android:background="@drawable/bg_pulse_inner" />
+
+                    <!-- Badge bouclier -->
+                    <FrameLayout
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_shield_badge"
+                        android:elevation="8dp">
+
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="Shield Lock"
+                            android:src="@drawable/ic_shield_lock"
+                            app:tint="@color/on_primary_container" />
+
+                    </FrameLayout>
+
+                </FrameLayout>
+
+                <!-- ── Titre ──────────────────────────────────────── -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/space_grotesk"
+                    android:gravity="center"
+                    android:letterSpacing="-0.03"
+                    android:text="@string/otp_title"
+                    android:textColor="@color/otp_text_primary"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/manrope"
+                    android:gravity="center"
+                    android:text="@string/otp_subtitle"
+                    android:textColor="@color/otp_text_secondary"
+                    android:textSize="15sp" />
+
+                <!-- Numéro de téléphone -->
+                <TextView
+                    android:id="@+id/tv_phone_display"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="28dp"
+                    android:fontFamily="@font/space_grotesk"
+                    android:gravity="center"
+                    android:textColor="@color/otp_accent"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    tools:text="+212 6XXXXXXXX" />
+
+                <!-- ── 6 champs OTP ───────────────────────────────── -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/otp_1"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_otp_input_adaptive"
+                        android:fontFamily="@font/space_grotesk"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/otp_text_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/otp_2"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_otp_input_adaptive"
+                        android:fontFamily="@font/space_grotesk"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/otp_text_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/otp_3"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_otp_input_adaptive"
+                        android:fontFamily="@font/space_grotesk"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/otp_text_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/otp_4"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_otp_input_adaptive"
+                        android:fontFamily="@font/space_grotesk"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/otp_text_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/otp_5"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_otp_input_adaptive"
+                        android:fontFamily="@font/space_grotesk"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/otp_text_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/otp_6"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_otp_input_adaptive"
+                        android:fontFamily="@font/space_grotesk"
+                        android:gravity="center"
+                        android:inputType="number"
+                        android:maxLength="1"
+                        android:textColor="@color/otp_text_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Message d'erreur -->
+                <TextView
+                    android:id="@+id/tv_otp_error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:fontFamily="@font/manrope"
+                    android:gravity="center"
+                    android:textColor="@color/error"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    tools:text="Code incorrect. Veuillez réessayer."
+                    tools:visibility="visible" />
+
+                <!-- ── Bouton Verify ───────────────────────────────── -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_verify"
+                    style="@style/Widget.SafeNow.Button.Verify"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginBottom="28dp"
+                    android:text="@string/btn_verify"
+                    app:icon="@drawable/ic_arrow_forward"
+                    app:iconGravity="end"
+                    app:iconTint="#FFFFFF" />
+
+                <!-- ── Section Renvoi ──────────────────────────────── -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <!-- Timer pill -->
+                    <LinearLayout
+                        android:id="@+id/layout_resend_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/bg_timer_pill_adaptive"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="6dp"
+                            android:contentDescription="Timer"
+                            android:src="@drawable/ic_schedule"
+                            app:tint="@color/otp_text_secondary" />
+
+                        <TextView
+                            android:id="@+id/tv_resend_timer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/manrope"
+                            android:letterSpacing="0.12"
+                            android:textAllCaps="true"
+                            android:textColor="@color/otp_text_secondary"
+                            android:textSize="11sp"
+                            tools:text="Resend in 30s" />
+
+                    </LinearLayout>
+
+                    <!-- Bouton Resend -->
+                    <Button
+                        android:id="@+id/btn_resend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.4"
+                        android:background="@null"
+                        android:enabled="false"
+                        android:fontFamily="@font/manrope"
+                        android:text="@string/btn_resend"
+                        android:textColor="@color/otp_accent"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- ══ FOOTER ══════════════════════════════════════════════ -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.4"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginEnd="6dp"
+                    android:contentDescription="Secure"
+                    android:src="@drawable/ic_lock"
+                    app:tint="@color/otp_text_secondary" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/manrope"
+                    android:letterSpacing="0.18"
+                    android:text="@string/footer_encrypted"
+                    android:textAllCaps="true"
+                    android:textColor="@color/otp_text_secondary"
+                    android:textSize="9sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

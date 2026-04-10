@@ -1,24 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    splash-->
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="background">#353C3A</color>
-    <color name="titre_principal">#FFFFFF</color>
-    <color name="sous_titre">#82ADEE</color>
-    <color name="texte">#FFFFFF</color>
-    <color name="primary_button">#00407A</color>
-    <color name="border_primary_button">#82ADEE</color>
-    <color name ="ring_color">#1AFFFFFF</color>
-    <color name="ring_border">#1AFFFFFF</color>
-    <color name ="ring_color_outer">#0DFFFFFF</color>
-    <color name="ring_border_outer">#0DFFFFFF</color>
 
-    <!--    simulation-->
-    <color name="hero_title_color">#E0E2E2</color>
-    <color name="body_text_color">#C1C9C7</color>
-    <color name="icon">#FFFFFF</color>
-    <color name="bar_bg">#33DBD8D8</color>
+    <!-- ═══════════════════════════════════════════════════════════════
+         values-night/colors.xml
+         MODE DARK :
+         - Écran Login  → fond sombre #353C3A (comme le design original)
+         - Écran OTP    → reste light (géré par le thème, pas ici)
+         ═══════════════════════════════════════════════════════════════ -->
 
+    <!-- Surface OTP en dark mode (légèrement sombre) -->
+    <color name="surface">#2A2E2D</color>
+    <color name="surface_bright">#323736</color>
+    <color name="surface_dim">#1E2221</color>
+    <color name="surface_variant">#3A3F3E</color>
+    <color name="surface_container">#323736</color>
+    <color name="surface_container_low">#2A2E2D</color>
+    <color name="surface_container_high">#3D4342</color>
+    <color name="surface_container_highest">#464C4B</color>
+    <color name="surface_container_lowest">#1E2221</color>
+    <color name="on_surface">#E0E2E2</color>
+    <color name="on_surface_variant">#C1C9C7</color>
+    <color name="on_background">#E0E2E2</color>
+    <color name="background">#1E2221</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TOKENS ADAPTATIFS — écran Login
+         MODE DARK → fond sombre #353C3A (design original)
+         ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Fond de l'écran Login en DARK = sombre comme le design HTML -->
+    <color name="login_background">#353C3A</color>
+
+    <!-- Texte principal blanc -->
+    <color name="login_text_primary">#FFFFFF</color>
+
+    <!-- Texte secondaire gris clair -->
+    <color name="login_text_secondary">#C1C9C7</color>
+
+    <!-- Placeholder -->
+    <color name="login_hint">#669E9E9E</color>
+
+    <!-- Fond des champs input dark -->
+    <color name="login_input_bg">#444D4B</color>
+
+    <!-- Cards dark -->
+    <color name="login_card_bg">#26444D4B</color>
+    <color name="login_card_stroke">#0DFFFFFF</color>
+
+
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TOKENS ADAPTATIFS — écran OTP
+         MODE DARK → même style sombre que l'écran Login #353C3A
+         ═══════════════════════════════════════════════════════════════ -->
+    <color name="otp_background">#353C3A</color>
+    <color name="otp_text_primary">#FFFFFF</color>
+    <color name="otp_text_secondary">#C1C9C7</color>
+    <color name="otp_accent">#A6C8FF</color>
+    <color name="otp_input_bg">#444D4B</color>
+    <color name="otp_input_focused_bg">#4E5755</color>
+    <color name="otp_timer_pill_bg">#444D4B</color>
 
 </resources>

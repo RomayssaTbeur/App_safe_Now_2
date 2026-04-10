@@ -1,19 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/surface"
+    android:gravity="center"
     tools:context=".MainActivity">
+
+    <!-- Shield Icon -->
+    <FrameLayout
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="24dp">
+
+        <View
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:background="@drawable/bg_pulse_outer"
+            android:alpha="0.4" />
+
+        <FrameLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_shield_badge"
+            android:elevation="4dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_shield_lock"
+                android:tint="@color/on_primary_container"
+                android:contentDescription="SafeNow Shield" />
+
+        </FrameLayout>
+
+    </FrameLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/space_grotesk"
+        android:text="@string/app_name"
+        android:textColor="@color/primary"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:letterSpacing="-0.03" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="@font/manrope"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:paddingHorizontal="32dp"
+        tools:text="+212 6XXXXXXXX" />
+
+    <!-- Emergency Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_emergency"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="@font/space_grotesk"
+        android:text="SOS"
+        android:textColor="@color/on_primary"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/secondary_container"
+        app:cornerRadius="90dp"
+        app:elevation="16dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope"
+        android:text="Tap to send an emergency alert"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="14sp"
+        android:alpha="0.7" />
+
+</LinearLayout>

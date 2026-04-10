@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ──────────────────────────────────────────────────────────
+
+     FICHIER 5 : bottom_nav_selector.xml
+
+     Sélecteur de couleur pour les icônes + labels
+
+     de la BottomNavigationView (actif vs inactif).
+
+     ────────────────────────────────────────────────────────── -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true"  android:color="@color/nav_active" />
+    <item android:state_checked="false" android:color="@color/nav_inactive" />
+</selector>

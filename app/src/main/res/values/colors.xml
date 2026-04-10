@@ -1,31 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--    splash-->
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         Couleurs fixes (identiques light et dark)
+         ═══════════════════════════════════════════════════════════════ -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background">#FDF9EF</color>
+
+    <!-- Brand -->
+    <color name="primary">#002A54</color>
+    <color name="primary_container">#00407A</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="on_primary_container">#82ADEE</color>
+    <color name="primary_fixed">#D5E3FF</color>
+    <color name="primary_fixed_dim">#A6C8FF</color>
+
+    <color name="secondary">#B6171E</color>
+    <color name="secondary_container">#DA3433</color>
+    <color name="on_secondary">#FFFFFF</color>
+
+    <color name="tertiary">#451F00</color>
+    <color name="tertiary_container">#663100</color>
+
+    <!-- Erreur -->
+    <color name="error">#BA1A1A</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="error_container">#FFDAD6</color>
+
+    <!-- Autres fixes -->
+    <color name="outline">#737781</color>
+    <color name="outline_variant">#C2C6D1</color>
+    <color name="surface_tint">#315F9B</color>
+    <color name="inverse_surface">#31312A</color>
+    <color name="inverse_on_surface">#F4F0E6</color>
+    <color name="inverse_primary">#A6C8FF</color>
+    <color name="primary_alpha_5">#0D002A54</color>
+    <color name="primary_alpha_10">#1A002A54</color>
+    <color name="primary_alpha_20">#33002A54</color>
+    <color name="white_alpha_5">#0DFFFFFF</color>
+    <color name="overlay_pulse">#14663100</color>
+
+    <!-- Couleurs projet existantes -->
     <color name="titre_principal">#002A54</color>
     <color name="sous_titre">#424750</color>
     <color name="texte">#000000</color>
-
     <color name="primary_button">#A7001E</color>
     <color name="border_primary_button">#CF1335</color>
-    <color name ="ring_color">#E2E2D4</color>
-    <color name ="ring_border">#DCD6C3</color>
-    <color name ="ring_color_outer">#E9E9DC</color>
+    <color name="ring_color">#E2E2D4</color>
+    <color name="ring_border">#DCD6C3</color>
+    <color name="ring_color_outer">#E9E9DC</color>
     <color name="ring_border_outer">#E4D7B7</color>
-
-    <!--    simulation-->
     <color name="hero_title_color">#002A54</color>
     <color name="body_text_color">#424750</color>
-
     <color name="scenario_card_bg">#F1EEE4</color>
     <color name="bar_bg">#E2E0DE</color>
     <color name="topbar_icon_color">#00407A</color>
     <color name="topbar_icon_secondary">#5C615F</color>
     <color name="icon">#000000</color>
 
+    <!-- Couleurs dark fixes (LoginActivity forcé dark) -->
+    <color name="dark_background">#353C3A</color>
+    <color name="dark_surface_variant">#444D4B</color>
+    <color name="dark_on_surface">#E0E2E2</color>
+    <color name="dark_on_surface_variant">#C1C9C7</color>
+    <color name="dark_card_bg">#444D4B</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         Surface OTP — MODE LIGHT (crème, comme la capture d'écran)
+         ═══════════════════════════════════════════════════════════════ -->
+    <color name="surface">#FDF9EF</color>
+    <color name="surface_bright">#FDF9EF</color>
+    <color name="surface_dim">#DDDAD0</color>
+    <color name="surface_variant">#E6E2D8</color>
+    <color name="surface_container">#F1EEE4</color>
+    <color name="surface_container_low">#F7F3E9</color>
+    <color name="surface_container_high">#ECE8DE</color>
+    <color name="surface_container_highest">#E6E2D8</color>
+    <color name="surface_container_lowest">#FFFFFF</color>
+    <color name="on_surface">#1C1C16</color>
+    <color name="on_surface_variant">#424750</color>
+    <color name="on_background">#1C1C16</color>
+    <color name="background">#FDF9EF</color>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TOKENS ADAPTATIFS — écran Login
+         MODE LIGHT → fond crème, textes navy (comme la capture)
+         ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- Fond de l'écran Login en LIGHT = crème comme la capture -->
+    <color name="login_background">#FDF9EF</color>
+
+    <!-- Texte principal navy foncé -->
+    <color name="login_text_primary">#002A54</color>
+
+    <!-- Texte secondaire gris bleuté -->
+    <color name="login_text_secondary">#424750</color>
+
+    <!-- Placeholder des inputs -->
+    <color name="login_hint">#80737781</color>
+
+    <!-- Fond des champs : gris clair sable -->
+    <color name="login_input_bg">#E6E2D8</color>
+
+    <!-- Cards info : légèrement plus foncées que le fond -->
+    <color name="login_card_bg">#F1EEE4</color>
+    <color name="login_card_stroke">#0D002A54</color>
 
 
 
+    <!-- ═══════════════════════════════════════════════════════════════
+         TOKENS ADAPTATIFS — écran OTP
+         MODE LIGHT → fond crème, textes navy (comme la capture)
+         ═══════════════════════════════════════════════════════════════ -->
+    <color name="otp_background">#FDF9EF</color>
+    <color name="otp_text_primary">#002A54</color>
+    <color name="otp_text_secondary">#424750</color>
+    <color name="otp_accent">#00407A</color>
+    <color name="otp_input_bg">#E2DDD4</color>
+    <color name="otp_input_focused_bg">#FFFFFF</color>
+    <color name="otp_timer_pill_bg">#F1EEE4</color>
+
+    <color name="nav_active">#6750A4</color>      <!-- violet (exemple Material) -->
+    <color name="nav_inactive">#9E9E9E</color>   <!-- gris -->
 </resources>

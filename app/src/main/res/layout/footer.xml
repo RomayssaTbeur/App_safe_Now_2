@@ -126,21 +126,21 @@
 
     <!-- Checklist (Active) -->
     <LinearLayout
-        android:id="@+id/nav_checklist"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:paddingVertical="8dp"
-        android:paddingHorizontal="12dp">
+            android:id="@+id/nav_checklist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingVertical="0dp"
+            android:paddingHorizontal="0dp">
 
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:contentDescription="Checklist"
             android:src="@drawable/ic_check"
-            app:tint="@color/sous_titre"
-            android:contentDescription="Checklist" />
+            app:tint="@color/sous_titre" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -152,5 +152,4 @@
             android:layout_marginTop="4dp" />
 
     </LinearLayout>
-
 </LinearLayout>
