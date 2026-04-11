@@ -25,7 +25,30 @@
     <color name="topbar_icon_secondary">#5C615F</color>
     <color name="icon">#000000</color>
 
+    <!--    contact interface-->
 
+        <color name="background_contact">#FDF9EF</color>
+        <color name="text_primary">#002A54</color>
+        <color name="text_secondary">#424750</color>
+        <color name="text_on_surface">#1C1C16</color>
+        <color name="card_contact_bg">#F7F3E9</color>
+        <color name="card_location_bg">#E6E2D8</color>
+        <color name="btn_primary">#002A54</color>
+        <color name="btn_white">#FFFFFF</color>
+        <color name="icon_primary">#002A54</color>
 
-
+    <!-- Light Mode checklist-->                                         ║
+    ║  <color name="brand_primary">#002A54</color>                 ║
+    ║  <color name="brand_danger">#B6171E</color>                  ║
+    ║  <color name="brand_danger_light">#1AB6171E</color>          ║
+    ║  <color name="surface_bg">#FDF9EF</color>                    ║
+    ║  <color name="surface_card">#F7F3E9</color>                  ║
+    ║  <color name="text_heading">#002A54</color>                  ║
+    ║  <color name="text_body">#1C1C16</color>                     ║
+    ║  <color name="text_muted">#424750</color>                    ║
+    ║  <color name="text_label">#8A8E96</color>                    ║
+    ║  <color name="overlay_active">#99B6171E</color>              ║
+    ║  <color name="overlay_inactive">#99424750</color>            ║
+    ║  <color name="dot_live">#22C55E</color>                      ║
+    ║  <color name="white_c">#FFFFFF</color>
 </resources>
