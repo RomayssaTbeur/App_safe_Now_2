@@ -1,4 +1,4 @@
-package com.example.safe_now_2;
+package com.example.safe_now_2.controller;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.safe_now_2.R;
 
 public class MainActivity extends AppCompatActivity {
 
