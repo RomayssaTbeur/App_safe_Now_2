@@ -134,74 +134,50 @@
                         tools:ignore="SmallSp" />
 
                     <!-- Country + Phone Row -->
+                    <!-- PHONE INPUT CONTAINER (FIX ALIGNMENT) -->
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="60dp"
                         android:orientation="horizontal"
+                        android:background="@drawable/bg_input_adaptive"
                         android:gravity="center_vertical"
-                        android:baselineAligned="false">
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp">
 
-                        <!-- Country Selector -->
-                        <LinearLayout
-                            android:id="@+id/layout_country_selector"
+                        <!-- Country Picker -->
+                        <com.hbb20.CountryCodePicker
+                            android:id="@+id/ccp"
                             android:layout_width="wrap_content"
-                            android:layout_height="60dp"
-                            android:layout_marginEnd="12dp"
-                            android:background="@drawable/bg_input_adaptive"
+                            android:layout_height="match_parent"
                             android:gravity="center_vertical"
-                            android:orientation="horizontal"
-                            android:paddingHorizontal="16dp"
-                            android:clickable="true"
-                            android:focusable="true">
+                            android:paddingEnd="8dp"
+                            app:ccp_showFlag="true"
+                            app:ccp_showNameCode="false"
+                            app:ccp_showFullName="false"
+                            app:ccp_autoDetectCountry="true"
+                            app:ccp_showArrow="true"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="6dp"
-                                android:text="🇲🇦"
-                                android:textSize="22sp" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="4dp"
-                                android:fontFamily="@font/space_grotesk"
-                                android:text="@string/country_code"
-                                android:textColor="@color/login_text_primary"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <ImageView
-                                android:layout_width="18dp"
-                                android:layout_height="18dp"
-                                android:src="@drawable/ic_expand_more"
-                                android:contentDescription="Expand"
-                                app:tint="@color/login_text_secondary" />
-
-                        </LinearLayout>
+                        <!-- Divider (optional clean UI) -->
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="24dp"
+                            android:background="@color/login_hint"
+                            android:alpha="0.3"/>
 
                         <!-- Phone Input -->
                         <EditText
                             android:id="@+id/et_phone"
                             android:layout_width="0dp"
-                            android:layout_height="60dp"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:autofillHints=""
-                            android:background="@drawable/bg_input_adaptive"
-                            android:backgroundTint="@null"
-                            android:fontFamily="@font/space_grotesk"
-                            android:gravity="center_vertical"
+                            android:background="@null"
                             android:hint="@string/hint_phone"
-                            android:imeOptions="actionDone"
                             android:inputType="phone"
-                            android:maxLength="9"
-                            android:paddingHorizontal="20dp"
+                            android:paddingStart="12dp"
                             android:textColor="@color/login_text_primary"
                             android:textColorHint="@color/login_hint"
-                            android:textSize="20sp"
-                            android:textStyle="bold"
-                            tools:ignore="VisualLintTextFieldSize" />
-
+                            android:textSize="18sp"
+                            android:fontFamily="@font/space_grotesk"/>
                     </LinearLayout>
 
                     <!-- Error -->
@@ -243,7 +219,7 @@
                         android:gravity="center"
                         android:textColor="@color/login_text_secondary"
                         android:textSize="13sp"
-                        android:alpha="0.6"
+                        android:alpha="1"
                         android:lineSpacingMultiplier="1.4" />
 
                 </LinearLayout>

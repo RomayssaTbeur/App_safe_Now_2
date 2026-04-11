@@ -114,4 +114,6 @@
     <color name="nav_active">#6750A4</color>
     <color name="nav_inactive_alt">#9E9E9E</color>
 
+    <color name="link_color">#4DA3FF</color>
+
 </resources>

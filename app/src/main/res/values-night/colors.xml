@@ -97,4 +97,6 @@
     <color name="otp_input_bg">#444D4B</color>
     <color name="otp_input_focused_bg">#4E5755</color>
     <color name="otp_timer_pill_bg">#444D4B</color>
+
+    <color name="link_color">#8AB4F8</color>
 </resources>

@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation("com.hbb20:ccp:2.7.3")
 
     // 🔥 Firebase BoM + Auth
     implementation(platform("com.google.firebase:firebase-bom:34.11.0"))
