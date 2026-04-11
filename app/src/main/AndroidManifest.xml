@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example.safe_now_2">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- Hardware -->
     <uses-feature android:name="android.hardware.telephony" android:required="false" />
@@ -34,6 +37,25 @@
         </activity>
         <activity android:name=".controller.LoginActivity"/>
         <activity android:name=".controller.HomeActivity"/>
+
+        <!--
+            OTP — thème light FORCÉ même en dark mode.
+            La clé est d'utiliser Theme.SafeNow.OTP qui est défini
+            UNIQUEMENT dans values/themes.xml (pas dans values-night/).
+            Android ne trouvera pas de version night → utilisera la light.
+        -->
+        <activity
+            android:name=".controller.OtpVerificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SafeNow.OTP"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- MAIN -->
+        <activity
+            android:name=".controller.MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SafeNow" />
+
     </application>
 
 </manifest>

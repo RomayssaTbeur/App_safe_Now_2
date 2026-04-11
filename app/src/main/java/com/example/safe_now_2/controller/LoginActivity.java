@@ -1,112 +1,289 @@
 package com.example.safe_now_2.controller;
 
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextPaint;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
+import android.text.style.ForegroundColorSpan;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
-import com.google.android.material.button.MaterialButton;
+import com.example.safe_now_2.AuthPreferences;
 import com.example.safe_now_2.R;
-import com.example.safe_now_2.model.UserSessionManager;
+import com.example.safe_now_2.utils.OtpManager;
+import com.google.android.material.button.MaterialButton;
 
 /**
- * ═══════════════════════════════════════════════════════════════
- * LoginActivity — CONTROLLER (MVC) — Version statique (simulation)
+ * Écran de saisie du numéro de téléphone.
  *
- * ╔══════════════════════════════════════════════════════════════╗
- * ║  MIGRATION FIREBASE OTP (étape future) :                    ║
- * ║                                                             ║
- * ║  1. Ajouter PhoneAuthProvider dans build.gradle :           ║
- * ║     implementation 'com.google.firebase:firebase-auth'      ║
- * ║                                                             ║
- * ║  2. Remplacer btnLogin.setOnClickListener par :             ║
- * ║     → Étape A : saisir numéro → PhoneAuthProvider.          ║
- * ║       verifyPhoneNumber(options)                             ║
- * ║     → Étape B : saisir OTP reçu par SMS → vérifier avec    ║
- * ║       PhoneAuthCredential credential =                      ║
- * ║         PhoneAuthProvider.getCredential(verificationId, otp)║
- * ║       FirebaseAuth.getInstance()                            ║
- * ║         .signInWithCredential(credential)                   ║
- * ║         .addOnSuccessListener(r -> goToHome())              ║
- * ║                                                             ║
- * ║  3. Supprimer sessionManager.saveLoginState(true)           ║
- * ║     (Firebase gère le token automatiquement)                ║
- * ║                                                             ║
- * ║  4. Dans UserSessionManager.isLoggedIn() :                  ║
- * ║     return FirebaseAuth.getInstance()                       ║
- * ║              .getCurrentUser() != null;                     ║
- * ╚══════════════════════════════════════════════════════════════╝
- * ═══════════════════════════════════════════════════════════════
+ * Flux :
+ *  1. L'activité vérifie d'abord si l'utilisateur est déjà authentifié
+ *     (SharedPreferences) → redirige directement vers MainActivity.
+ *  2. Sinon, l'utilisateur saisit son numéro et appuie sur "Send Code".
+ *  3. Un OTP est généré et on navigue vers OtpVerificationActivity.
  */
 public class LoginActivity extends AppCompatActivity {
 
-    // ── Vues ──────────────────────────────────────────────────────
-//    private EditText       etPhone;
-    private MaterialButton btnLogin;
+    // ── Views ─────────────────────────────────────────────────────────────────
+    private EditText etPhone;
+    private TextView tvPhoneError;
+    private MaterialButton btnSendCode;
 
-    // ── Model ─────────────────────────────────────────────────────
-    private UserSessionManager sessionManager;
+    // ── Helpers ───────────────────────────────────────────────────────────────
+    private AuthPreferences authPrefs;
+    private OtpManager otpManager;
+
+    // ── Constants ─────────────────────────────────────────────────────────────
+    private static final String COUNTRY_CODE = "+212";
+
+    // ─────────────────────────────────────────────────────────────────────────
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Initialiser les préférences AVANT setContentView
+        authPrefs = new AuthPreferences(this);
+
+        // ┌─ VÉRIFICATION AUTH RAPIDE ──────────────────────────────────────────
+        // Si l'utilisateur a déjà validé son numéro → accès direct à l'appli.
+        // Aucun écran de login affiché = zéro friction pour une app d'urgence.
+        if (authPrefs.isLoggedIn()) {
+            goToMain();
+            return; // Ne pas continuer onCreate
+        }
+        // └────────────────────────────────────────────────────────────────────
+
         setContentView(R.layout.activity_login);
 
-        // Init model
-//        sessionManager = UserSessionManager.getInstance(this);
-//
-//        // Bind vues
-//        etPhone  = findViewById(R.id.et_phone);
-        btnLogin = findViewById(R.id.btn_login);
+        // Thème sombre forcé pour cet écran
+        getWindow().setStatusBarColor(
+                ContextCompat.getColor(this, R.color.dark_background));
+        getWindow().getDecorView().setSystemUiVisibility(0); // icônes claires
 
-        // ── [ACTUEL] Login simulé ──────────────────────────────────
-        btnLogin.setOnClickListener(v -> performStaticLogin());
+        otpManager = OtpManager.getInstance();
 
-        // ─── [FIREBASE] Remplacer performStaticLogin() par :
-        // ─── sendOtp() → afficher champ OTP → verifyOtp() → goToHome()
+        initViews();
+        setupTermsText();
+        setupListeners();
+        animateEntrance();
     }
 
-    // ═══════════════════════════════════════════════════════════════
-    // LOGIN STATIQUE (temporaire)
-    // ═══════════════════════════════════════════════════════════════
+    // ── Initialisation ────────────────────────────────────────────────────────
+
+    private void initViews() {
+        etPhone      = findViewById(R.id.et_phone);
+        tvPhoneError = findViewById(R.id.tv_phone_error);
+        btnSendCode  = findViewById(R.id.btn_send_code);
+
+        // Bouton retour
+        findViewById(R.id.btn_back).setOnClickListener(v -> finish());
+    }
 
     /**
-     * Simule un login réussi.
-     * VERSION FIREBASE : cette méthode est supprimée et remplacée
-     * par le flow OTP (voir commentaire MIGRATION ci-dessus).
+     * Construit le texte "Terms of Service and Privacy Policy" avec liens cliquables.
      */
-    private void performStaticLogin() {
-//        String phone = etPhone.getText().toString().trim();
-//
-//        // Validation basique (sera remplacée par vérification OTP Firebase)
-//        if (TextUtils.isEmpty(phone)) {
-//            etPhone.setError("Entrez votre numéro");
-//            return;
-//        }
-//
-//        // ── [ACTUEL] Sauvegarder session localement ────────────────
-//        sessionManager.saveLoginState(true);
-//        sessionManager.saveUserPhone(phone); // déjà utile pour l'UI post-login
+    private void setupTermsText() {
+        TextView tvTerms = findViewById(R.id.tv_terms);
+        if (tvTerms == null) return;
 
-        // ─── [FIREBASE] Ces 2 lignes sont supprimées :
-        // ─── Firebase gère le token ; isLoggedIn() lira getCurrentUser()
+        String full = "By continuing, you agree to SafeNow's Terms of Service and Privacy Policy.";
+        SpannableString ss = new SpannableString(full);
 
-        // Naviguer vers Home
-        goToHome();
+        int tosStart = full.indexOf("Terms of Service");
+        int tosEnd   = tosStart + "Terms of Service".length();
+        int ppStart  = full.indexOf("Privacy Policy");
+        int ppEnd    = ppStart + "Privacy Policy".length();
+
+        int white = ContextCompat.getColor(this, android.R.color.white);
+
+        ss.setSpan(buildClickableLink(() ->
+                        Toast.makeText(this, "Terms of Service", Toast.LENGTH_SHORT).show()),
+                tosStart, tosEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(new ForegroundColorSpan(white),
+                tosStart, tosEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        ss.setSpan(buildClickableLink(() ->
+                        Toast.makeText(this, "Privacy Policy", Toast.LENGTH_SHORT).show()),
+                ppStart, ppEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        ss.setSpan(new ForegroundColorSpan(white),
+                ppStart, ppEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        tvTerms.setText(ss);
+        tvTerms.setMovementMethod(LinkMovementMethod.getInstance());
+        tvTerms.setHighlightColor(android.graphics.Color.TRANSPARENT);
     }
 
-    // ═══════════════════════════════════════════════════════════════
-    // NAVIGATION
-    // ═══════════════════════════════════════════════════════════════
+    private ClickableSpan buildClickableLink(Runnable action) {
+        return new ClickableSpan() {
+            @Override
+            public void onClick(@NonNull View widget) { action.run(); }
+            @Override
+            public void updateDrawState(@NonNull TextPaint ds) {
+                super.updateDrawState(ds);
+                ds.setUnderlineText(true);
+            }
+        };
+    }
 
-    private void goToHome() {
-        Intent intent = new Intent(this, HomeActivity.class);
+    // ── Listeners ─────────────────────────────────────────────────────────────
+
+    private void setupListeners() {
+        btnSendCode.setOnClickListener(v -> {
+            String phone = etPhone.getText().toString().trim();
+            if (validatePhone(phone)) {
+                sendCode(phone);
+            }
+        });
+
+        // Effacer l'erreur dès que l'utilisateur retape
+        etPhone.addTextChangedListener(new SimpleTextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                hideError();
+            }
+        });
+    }
+
+    // ── Validation ────────────────────────────────────────────────────────────
+
+    /**
+     * Valide le numéro marocain : 9 chiffres commençant par 6 ou 7.
+     * Adaptez selon votre marché.
+     */
+    private boolean validatePhone(String phone) {
+        if (phone.isEmpty()) {
+            showError(getString(R.string.error_invalid_phone));
+            return false;
+        }
+        if (!phone.matches("[67]\\d{8}")) {
+            showError(getString(R.string.error_invalid_phone));
+            return false;
+        }
+        return true;
+    }
+
+    private void showError(String msg) {
+        tvPhoneError.setText(msg);
+        tvPhoneError.setVisibility(View.VISIBLE);
+    }
+
+    private void hideError() {
+        tvPhoneError.setVisibility(View.GONE);
+    }
+
+    // ── Envoi OTP ─────────────────────────────────────────────────────────────
+    /**private void sendCode(String localPhone) {
+        String fullPhone;
+        // Si on est sur émulateur, utiliser le numéro de test
+        if (android.os.Build.FINGERPRINT.contains("generic")) {
+            fullPhone = "+212600000001"; // numéro de test Firebase
+        } else {
+            fullPhone = COUNTRY_CODE + localPhone; // numéro réel
+        }
+
+        // Désactiver le bouton pendant l'envoi
+        btnSendCode.setEnabled(false);
+        btnSendCode.setText("Sending…");
+
+        otpManager.sendOtp(fullPhone, this, new OtpManager.SendCallback() {
+            @Override
+            public void onSuccess() {
+                runOnUiThread(() -> {
+                    btnSendCode.setEnabled(true);
+                    btnSendCode.setText(getString(R.string.btn_send_code));
+                    goToOtp(fullPhone);
+                });
+            }
+
+            @Override
+            public void onError(String message) {
+                runOnUiThread(() -> {
+                    btnSendCode.setEnabled(true);
+                    btnSendCode.setText(getString(R.string.btn_send_code));
+                    showError(message);
+                });
+            }
+        });
+    } **/
+    private void sendCode(String localPhone) {
+        String fullPhone = COUNTRY_CODE + localPhone;
+
+        // Désactiver le bouton pendant l'envoi
+        btnSendCode.setEnabled(false);
+        btnSendCode.setText("Sending…");
+
+        otpManager.sendOtp(fullPhone, this, new OtpManager.SendCallback() {
+
+            @Override
+            public void onSuccess() {
+                runOnUiThread(() -> {
+                    btnSendCode.setEnabled(true);
+                    btnSendCode.setText(getString(R.string.btn_send_code));
+
+                    goToOtp(fullPhone);
+                });
+            }
+
+            @Override
+            public void onError(String message) {
+                runOnUiThread(() -> {
+                    btnSendCode.setEnabled(true);
+                    btnSendCode.setText(getString(R.string.btn_send_code));
+                    showError(message);
+                });
+            }
+        }); // ✅ <-- N'oublie pas ce point-virgule et cette accolade
+
+    } // ✅ <-- fermeture correcte de sendCode()
+
+// ── Navigation ────────────────────────────────────────────────────────────
+
+    /** Navigue vers l'écran de vérification OTP. */
+    private void goToOtp(String fullPhone) {
+        Intent intent = new Intent(this, OtpVerificationActivity.class);
+        intent.putExtra(OtpVerificationActivity.EXTRA_PHONE, fullPhone);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        finish(); // pas de retour vers Login
+    }
+    /**
+     * Navigue vers MainActivity et ferme la pile d'authentification.
+     * L'utilisateur ne peut plus revenir à l'écran de login via "Back".
+     */
+    private void goToMain() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        finish();
+    }
+
+    // ── Animation d'entrée ────────────────────────────────────────────────────
+
+    private void animateEntrance() {
+        View contentRoot = findViewById(android.R.id.content);
+        AlphaAnimation fadeIn = new AlphaAnimation(0f, 1f);
+        fadeIn.setDuration(500);
+        fadeIn.setFillAfter(true);
+        contentRoot.startAnimation(fadeIn);
+    }
+
+    // ── TextWatcher simplifié ─────────────────────────────────────────────────
+
+    /** Implémentation minimaliste de TextWatcher pour éviter le boilerplate. */
+    private abstract static class SimpleTextWatcher
+            implements android.text.TextWatcher {
+        @Override public void beforeTextChanged(CharSequence s, int st, int c, int a) {}
+        @Override public void afterTextChanged(android.text.Editable s) {}
     }
 }

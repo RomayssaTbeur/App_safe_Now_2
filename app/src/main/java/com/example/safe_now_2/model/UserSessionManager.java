@@ -63,7 +63,7 @@ public class UserSessionManager {
     public boolean isLoggedIn() {
         // ─── [FIREBASE] Remplacer ces 2 lignes par :
         // ─── return FirebaseAuth.getInstance().getCurrentUser() != null;
-        return prefs.getBoolean(KEY_IS_LOGGED, true);
+       return prefs.getBoolean(KEY_IS_LOGGED, true);
     }
 
     /**

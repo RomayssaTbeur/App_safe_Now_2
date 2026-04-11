@@ -2,7 +2,6 @@ package com.example.safe_now_2.controller;
 
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
