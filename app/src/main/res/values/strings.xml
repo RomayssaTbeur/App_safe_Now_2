@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Safe_now_2</string>
+    <string name="app_name">SafeNow</string>
 
     <!-- Titres écran -->
     <string name="alert_history">Alert History</string>

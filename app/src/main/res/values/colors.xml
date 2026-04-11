@@ -34,6 +34,7 @@
     <color name="inverse_surface">#31312A</color>
     <color name="inverse_on_surface">#F4F0E6</color>
     <color name="inverse_primary">#A6C8FF</color>
+
     <color name="primary_alpha_5">#0D002A54</color>
     <color name="primary_alpha_10">#1A002A54</color>
     <color name="primary_alpha_20">#33002A54</color>
@@ -58,77 +59,49 @@
     <color name="topbar_icon_secondary">#5C615F</color>
     <color name="icon">#000000</color>
 
-    <!-- Couleurs dark fixes (LoginActivity forcé dark) -->
+    <!-- Dark -->
     <color name="dark_background">#353C3A</color>
     <color name="dark_surface_variant">#444D4B</color>
     <color name="dark_on_surface">#E0E2E2</color>
     <color name="dark_on_surface_variant">#C1C9C7</color>
     <color name="dark_card_bg">#444D4B</color>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         Surface OTP — MODE LIGHT (crème, comme la capture d'écran)
-         ═══════════════════════════════════════════════════════════════ -->
+    <!-- Surface OTP -->
     <color name="surface">#FDF9EF</color>
     <color name="surface_bright">#FDF9EF</color>
     <color name="surface_dim">#DDDAD0</color>
+
     <color name="surface_variant">#E6E2D8</color>
+
     <color name="surface_container">#F1EEE4</color>
     <color name="surface_container_low">#F7F3E9</color>
     <color name="surface_container_high">#ECE8DE</color>
     <color name="surface_container_highest">#E6E2D8</color>
     <color name="surface_container_lowest">#FFFFFF</color>
+
     <color name="on_surface">#1C1C16</color>
     <color name="on_surface_variant">#424750</color>
+
     <color name="on_background">#1C1C16</color>
     <color name="background">#FDF9EF</color>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         TOKENS ADAPTATIFS — écran Login
-         MODE LIGHT → fond crème, textes navy (comme la capture)
-         ═══════════════════════════════════════════════════════════════ -->
-
-    <!-- Fond de l'écran Login en LIGHT = crème comme la capture -->
+    <!-- Login -->
     <color name="login_background">#FDF9EF</color>
-
-    <!-- Texte principal navy foncé -->
     <color name="login_text_primary">#002A54</color>
-
-    <!-- Texte secondaire gris bleuté -->
     <color name="login_text_secondary">#424750</color>
-
-    <!-- Placeholder des inputs -->
     <color name="login_hint">#80737781</color>
-
-    <!-- Fond des champs : gris clair sable -->
     <color name="login_input_bg">#E6E2D8</color>
-
-    <!-- Cards info : légèrement plus foncées que le fond -->
     <color name="login_card_bg">#F1EEE4</color>
     <color name="login_card_stroke">#0D002A54</color>
 
-    <!-- Alert History – surfaces -->
-    <color name="surface_container_low">#F7F3E9</color>
-    <color name="surface_container_high">#ECE8DE</color>
-    <color name="surface_variant">#E6E2D8</color>
-    <color name="on_surface">#1C1C16</color>
-    <color name="on_surface_variant">#424750</color>
-
-    <!-- Alert History – accents -->
-    <color name="outline">#737781</color>
-    <color name="outline_variant">#C2C6D1</color>
+    <!-- Alert / UI -->
     <color name="nav_inactive">#5C615F</color>
-    <color name="tertiary">#451F00</color>
     <color name="tertiary_on_container">#FC8F34</color>
-
     <color name="location_row_color">#99FFFFFF</color>
-
-    <color name="nav_item_active_bg">#1A00407A</color>  <!-- bleu 10% -->
+    <color name="nav_item_active_bg">#1A00407A</color>
     <color name="checklist">#012A54</color>
 
-    <!-- ═══════════════════════════════════════════════════════════════
-         TOKENS ADAPTATIFS — écran OTP
-         MODE LIGHT → fond crème, textes navy (comme la capture)
-         ═══════════════════════════════════════════════════════════════ -->
+    <!-- OTP -->
     <color name="otp_background">#FDF9EF</color>
     <color name="otp_text_primary">#002A54</color>
     <color name="otp_text_secondary">#424750</color>
@@ -137,6 +110,8 @@
     <color name="otp_input_focused_bg">#FFFFFF</color>
     <color name="otp_timer_pill_bg">#F1EEE4</color>
 
-    <color name="nav_active">#6750A4</color>      <!-- violet (exemple Material) -->
-    <color name="nav_inactive">#9E9E9E</color>   <!-- gris -->
+    <!-- Navigation -->
+    <color name="nav_active">#6750A4</color>
+    <color name="nav_inactive_alt">#9E9E9E</color>
+
 </resources>

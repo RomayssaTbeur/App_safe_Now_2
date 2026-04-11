@@ -1,5 +1,4 @@
 package com.example.safe_now_2.controller;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -18,7 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.safe_now_2.AuthPreferences;
+import com.example.safe_now_2.model.AuthPreferences;
 import com.example.safe_now_2.R;
 import com.example.safe_now_2.utils.OtpManager;
 import com.google.android.material.button.MaterialButton;
@@ -53,15 +52,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Initialiser les préférences AVANT setContentView
-        authPrefs = new AuthPreferences(this);
-
-        // ┌─ VÉRIFICATION AUTH RAPIDE ──────────────────────────────────────────
-        // Si l'utilisateur a déjà validé son numéro → accès direct à l'appli.
-        // Aucun écran de login affiché = zéro friction pour une app d'urgence.
-        if (authPrefs.isLoggedIn()) {
-            goToMain();
-            return; // Ne pas continuer onCreate
-        }
+//        authPrefs = new AuthPreferences(this);
+//
+//        // ┌─ VÉRIFICATION AUTH RAPIDE ──────────────────────────────────────────
+//        // Si l'utilisateur a déjà validé son numéro → accès direct à l'appli.
+//        // Aucun écran de login affiché = zéro friction pour une app d'urgence.
+//        if (authPrefs.isLoggedIn()) {
+//            goToMain();
+//            return; // Ne pas continuer onCreate
+//        }
         // └────────────────────────────────────────────────────────────────────
 
         setContentView(R.layout.activity_login);

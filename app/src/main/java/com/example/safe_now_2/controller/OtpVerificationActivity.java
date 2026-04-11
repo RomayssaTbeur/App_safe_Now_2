@@ -19,7 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.safe_now_2.AuthPreferences;
+import com.example.safe_now_2.model.AuthPreferences;
 import com.example.safe_now_2.utils.OtpManager;
 import com.example.safe_now_2.R;
 import com.google.android.material.button.MaterialButton;
@@ -287,7 +287,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
     }
 
     private void goToMain() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, HomeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);

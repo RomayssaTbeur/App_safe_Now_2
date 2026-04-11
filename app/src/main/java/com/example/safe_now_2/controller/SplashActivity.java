@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.safe_now_2.utils.PermissionDialogHelper;
 import com.google.android.material.button.MaterialButton;
 import com.example.safe_now_2.R;
-import com.example.safe_now_2.model.UserSessionManager;
+import com.example.safe_now_2.model.AuthPreferences;
 import com.example.safe_now_2.utils.PermissionHelper;
 
 /**
@@ -44,7 +44,6 @@ public class SplashActivity extends AppCompatActivity {
     private View  logoContainer;
 
     // ── Model ─────────────────────────────────────────────────────
-    private UserSessionManager sessionManager;
 
     // ── ActivityResultLauncher (API moderne permissions) ──────────
     private ActivityResultLauncher<String[]> permissionLauncher;
@@ -55,7 +54,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.splash_activity);
 
         // ── 1. Init Model ──────────────────────────────────────────
-        sessionManager = UserSessionManager.getInstance(this);
+        AuthPreferences authPrefs = new AuthPreferences(this);
 
         // ── 2. Bind vues ───────────────────────────────────────────
         btnStart      = findViewById(R.id.btn_start);
@@ -65,7 +64,7 @@ public class SplashActivity extends AppCompatActivity {
         initPermissionLauncher();
 
         // ── 4. Décision de routing ─────────────────────────────────
-        if (sessionManager.isLoggedIn()) {
+        if (authPrefs.isLoggedIn()) {
             handleLoggedInUser();
         } else {
             handleNewUser();

@@ -1,4 +1,4 @@
-package com.example.safe_now_2;
+package com.example.safe_now_2.model;
 
 
 import android.content.Context;

@@ -33,19 +33,19 @@ public class OtpManager {
         mAuth = FirebaseAuth.getInstance();
     }
     /**private OtpManager() {
-        mAuth = FirebaseAuth.getInstance();
+     mAuth = FirebaseAuth.getInstance();
 
-        if (android.os.Build.FINGERPRINT.contains("generic")) {
+     if (android.os.Build.FINGERPRINT.contains("generic")) {
 
-            // Désactive reCAPTCHA
-            mAuth.getFirebaseAuthSettings()
-                    .setAppVerificationDisabledForTesting(true);
+     // Désactive reCAPTCHA
+     mAuth.getFirebaseAuthSettings()
+     .setAppVerificationDisabledForTesting(true);
 
-            // 🔥 CRUCIAL : évite complètement la page web
-            mAuth.getFirebaseAuthSettings()
-                    .setAutoRetrievedSmsCodeForPhoneNumber("+212600000001", "123456");
-        }
-    } **/
+     // 🔥 CRUCIAL : évite complètement la page web
+     mAuth.getFirebaseAuthSettings()
+     .setAutoRetrievedSmsCodeForPhoneNumber("+212600000001", "123456");
+     }
+     } **/
     private String verificationId;
     private PhoneAuthProvider.ForceResendingToken resendToken;
 
@@ -68,12 +68,21 @@ public class OtpManager {
                         .setTimeout(60L, TimeUnit.SECONDS)
                         .setActivity(activity)
                         .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
                             @Override
                             public void onVerificationCompleted(@NonNull PhoneAuthCredential credential) {
-                                // Auto-retrieval succeeded
-                                Log.d(TAG, "Verification auto-completée.");
-                            }
 
+                                mAuth.signInWithCredential(credential)
+                                        .addOnCompleteListener(task -> {
+                                            if (task.isSuccessful()) {
+                                                verificationId = null;
+                                                resendToken = null;
+                                                callback.onSuccess();
+                                            } else {
+                                                callback.onError("Auto verification failed");
+                                            }
+                                        });
+                            }
                             @Override
                             public void onVerificationFailed(@NonNull FirebaseException e) {
                                 Log.e(TAG, "Erreur verification OTP: " + e.getMessage());
@@ -93,7 +102,56 @@ public class OtpManager {
 
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
-
+//    public void sendOtp(String phoneNumber, Activity activity, SendCallback callback) {
+//
+//        PhoneAuthOptions.Builder builder =
+//                PhoneAuthOptions.newBuilder(mAuth)
+//                        .setPhoneNumber(phoneNumber)
+//                        .setTimeout(60L, TimeUnit.SECONDS)
+//                        .setActivity(activity)
+//                        .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+//
+//                            @Override
+//                            public void onVerificationCompleted(@NonNull PhoneAuthCredential credential) {
+//
+//                                mAuth.signInWithCredential(credential)
+//                                        .addOnCompleteListener(task -> {
+//                                            if (task.isSuccessful()) {
+//                                                verificationId = null;
+//                                                resendToken = null;
+//                                                callback.onSuccess();
+//                                            } else {
+//                                                callback.onError("Auto verification failed");
+//                                            }
+//                                        });
+//                            }
+//
+//                            @Override
+//                            public void onVerificationFailed(@NonNull FirebaseException e) {
+//                                Log.e(TAG, "Erreur verification OTP: " + e.getMessage());
+//                                callback.onError("Échec de l'envoi OTP : " + e.getMessage());
+//                            }
+//
+//                            @Override
+//                            public void onCodeSent(@NonNull String verifId,
+//                                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
+//
+//                                verificationId = verifId;
+//                                resendToken = token;
+//
+//                                Log.d(TAG, "OTP envoyé avec ID: " + verifId);
+//
+//                                // ⚠️ IMPORTANT : ne pas appeler callback.onSuccess() ici
+//                            }
+//                        });
+//
+//        // ✔ support resend OTP (si disponible)
+//        if (resendToken != null) {
+//            builder.setForceResendingToken(resendToken);
+//        }
+//
+//        PhoneAuthProvider.verifyPhoneNumber(builder.build());
+//    }
 
     // ── Vérification OTP ──────────────────────────────────────────────────────
     public void verifyOtp(String code, VerifyCallback callback) {

@@ -92,7 +92,7 @@
          ═══════════════════════════════════════════════════════════════ -->
     <color name="otp_background">#353C3A</color>
     <color name="otp_text_primary">#FFFFFF</color>
-    <color name="otp_text_secondary">#C1C9C7</color>
+    <color name="otp_text_secondary">#E0E2E2</color>
     <color name="otp_accent">#A6C8FF</color>
     <color name="otp_input_bg">#444D4B</color>
     <color name="otp_input_focused_bg">#4E5755</color>
