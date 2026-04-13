@@ -38,6 +38,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":unityLibrary"))
+    implementation(files("../unityLibrary/libs/unity-classes.jar"))
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

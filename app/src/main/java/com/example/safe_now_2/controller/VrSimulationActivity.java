@@ -9,6 +9,7 @@ import androidx.cardview.widget.CardView;
 
 import com.example.safe_now_2.R;
 import com.example.safe_now_2.model.SimulationModel;
+import com.example.safe_now_2.unity.UnityActivity;
 import com.google.android.material.button.MaterialButton;
 
 public class VrSimulationActivity extends AppCompatActivity {
