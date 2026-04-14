@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "618588304884",
+    "project_id": "safenow-fda61",
+    "storage_bucket": "safenow-fda61.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618588304884:android:cf1851b516fe77e4a5f5a1",
+        "android_client_info": {
+          "package_name": "com.example.safe_now_2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_5yBbYVp5tm4I_cB3U1iaEt_QMrTuqc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,6 +3,7 @@ package com.example.safe_now_2;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -17,6 +18,10 @@ import androidx.cardview.widget.CardView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.example.safe_now_2.controller.HomeActivity;
+import com.example.safe_now_2.controller.MainActivity;
+import com.example.safe_now_2.controller.SplashActivity;
 
 public class CheckListActivity extends AppCompatActivity {
 
@@ -72,7 +77,7 @@ public class CheckListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checklist);
-
+        setupBottomNav();
         bindViews();
         setupListeners();
         activateScenario("fire");
@@ -249,5 +254,27 @@ public class CheckListActivity extends AppCompatActivity {
 
     private float dpToPx(int dp) {
         return dp * getResources().getDisplayMetrics().density;
+    }
+    private void setupBottomNav() {
+
+        findViewById(R.id.nav_home).setOnClickListener(v -> {
+            startActivity(new Intent(this, HomeActivity.class));
+        });
+
+        findViewById(R.id.nav_contacts).setOnClickListener(v -> {
+            startActivity(new Intent(this, Contact_activity.class));
+        });
+
+        findViewById(R.id.nav_sos).setOnClickListener(v -> {
+            startActivity(new Intent(this, HomeActivity.class));
+        });
+
+        findViewById(R.id.nav_history).setOnClickListener(v -> {
+            startActivity(new Intent(this, MainActivity.class));
+        });
+
+        findViewById(R.id.nav_checklist).setOnClickListener(v -> {
+
+        });
     }
 }

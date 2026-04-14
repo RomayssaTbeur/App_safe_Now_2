@@ -19,18 +19,6 @@
     <color name="body_text_color">#C1C9C7</color>
     <color name="icon">#FFFFFF</color>
     <color name="bar_bg">#33DBD8D8</color>
-    ║  <!-- Night Mode → checklist -->
-    ║  <color name="brand_primary">#4A90D9</color>                 ║
-    ║  <color name="brand_danger">#E05A60</color>                  ║
-    ║  <color name="brand_danger_light">#33E05A60</color>          ║
-    ║  <color name="surface_bg">#111318</color>                    ║
-    ║  <color name="surface_card">#1E2229</color>                  ║
-    ║  <color name="text_heading">#A8C8F0</color>                  ║
-    ║  <color name="text_body">#E8E6DF</color>                     ║
-    ║  <color name="text_muted">#9BA3AE</color>                    ║
-    ║  <color name="text_label">#6B7280</color>                    ║
-    ║  <color name="overlay_active">#CC8B1218</color>              ║
-    ║  <color name="overlay_inactive">#CC1E232B</color>            ║
-    ║  <color name="dot_live">#4ADE80</color>                      ║
-    ║  <color name="white_c">#FFFFFF</color>
+
+
 </resources>

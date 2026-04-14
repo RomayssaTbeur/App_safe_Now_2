@@ -15,20 +15,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Safe_now_2">
         <activity
-            android:name=".CheckListActivity"
+            android:name=".controller.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.Safe_now_2">
+            tools:ignore="MissingClass">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Contact_activity" />
+        <activity android:name=".controller.LoginActivity" />
+        <activity android:name=".controller.OtpVerificationActivity" />
+        <activity android:name=".controller.HomeActivity" />
+        <activity android:name=".CheckListActivity" />
+        <activity android:name=".controller.MainActivity" />
+
+
     </application>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.SEND_SMS"
+        tools:ignore="SmsAndCallLogPolicy" />
 </manifest>

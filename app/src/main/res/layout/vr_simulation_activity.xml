@@ -14,10 +14,13 @@
     <!--        CONTENU PRINCIPAL      -->
     <!-- ══════════════════════════════ -->
 
+
+    <!-- FOOTER -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="100dp"
+        android:layout_marginTop="72dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -29,15 +32,16 @@
             android:paddingBottom="24dp">
 
             <!-- ── Hero Title ── -->
+
             <TextView
                 android:id="@+id/tv_hero_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:letterSpacing="-0.03"
+                android:lineSpacingMultiplier="1.1"
                 android:text="Immersion\nPreparation"
                 android:textColor="@color/hero_title_color"
-                android:textSize="40sp"
-                android:letterSpacing="-0.03"
-                android:lineSpacingMultiplier="1.1" />
+                android:textSize="40sp" />
 
             <TextView
                 android:id="@+id/tv_hero_subtitle"
@@ -45,10 +49,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="32dp"
+                android:lineSpacingMultiplier="1.5"
                 android:text="Select your training environment. Each simulation is calibrated to real-world physiological stress levels to ensure behavioral retention."
                 android:textColor="@color/body_text_color"
-                android:textSize="15sp"
-                android:lineSpacingMultiplier="1.5" />
+                android:textSize="15sp" />
 
             <!-- ══════════════════════════════ -->
             <!--     SCENARIO CARDS            -->
@@ -57,20 +61,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
                 android:orientation="horizontal"
-                android:weightSum="2"
-                android:layout_marginBottom="32dp">
+                android:weightSum="2">
 
                 <!-- Card Fire (Selected) -->
                 <androidx.cardview.widget.CardView
                     android:id="@+id/card_fire"
                     android:layout_width="0dp"
                     android:layout_height="220dp"
-                    android:layout_weight="1"
                     android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/scenario_card_bg"
                     app:cardCornerRadius="28dp"
-                    app:cardElevation="8dp"
-                    app:cardBackgroundColor="@color/scenario_card_bg">
+                    app:cardElevation="8dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -81,11 +85,10 @@
                             android:id="@+id/img_fire"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/img_fire"
                             android:alpha="0.4"
-                            android:contentDescription="Fire scenario" />
-
+                            android:contentDescription="Fire scenario"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_fire" />
 
 
                         <!-- Contenu bas -->
@@ -99,9 +102,9 @@
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:src="@drawable/ic_fire"
                                 android:layout_marginBottom="8dp"
-                                android:contentDescription="Fire icon" />
+                                android:contentDescription="Fire icon"
+                                android:src="@drawable/ic_fire" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -113,13 +116,12 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
                                 android:text="High Heat • Zero Visibility"
                                 android:textColor="@color/black"
-                                android:textSize="11sp"
-                                android:layout_marginTop="4dp" />
+                                android:textSize="11sp" />
 
                         </LinearLayout>
-
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -131,11 +133,11 @@
                     android:id="@+id/card_earthquake"
                     android:layout_width="0dp"
                     android:layout_height="220dp"
-                    android:layout_weight="1"
                     android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    app:cardBackgroundColor="@color/scenario_card_bg"
                     app:cardCornerRadius="28dp"
-                    app:cardElevation="4dp"
-                    app:cardBackgroundColor="@color/scenario_card_bg">
+                    app:cardElevation="4dp">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -146,10 +148,10 @@
                             android:id="@+id/img_earthquake"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/img_earthquake"
                             android:alpha="0.15"
-                            android:contentDescription="Earthquake scenario" />
+                            android:contentDescription="Earthquake scenario"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_earthquake" />
 
                         <!-- Contenu bas -->
                         <LinearLayout
@@ -162,10 +164,10 @@
                             <ImageView
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:src="@drawable/ic_vibrate"
-                                app:tint="@color/black"
                                 android:layout_marginBottom="8dp"
-                                android:contentDescription="Earthquake icon" />
+                                android:contentDescription="Earthquake icon"
+                                android:src="@drawable/ic_vibrate"
+                                app:tint="@color/black" />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -177,10 +179,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
                                 android:text="Magnitude 7.2 • Structural Failure"
                                 android:textColor="@color/black"
-                                android:textSize="11sp"
-                                android:layout_marginTop="4dp" />
+                                android:textSize="11sp" />
 
                         </LinearLayout>
 
@@ -191,10 +193,11 @@
             </LinearLayout>
 
 
-
             <!-- ══════════════════════════════ -->
             <!--     BOUTON START SIMULATION   -->
             <!-- ══════════════════════════════ -->
+
+
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_start_simulation"
@@ -204,9 +207,12 @@
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:letterSpacing="0.08"
-                app:backgroundTint="@color/primary_button"
+                android:backgroundTint="@color/primary_button"
                 app:cornerRadius="32dp"
                 android:layout_marginBottom="16dp" />
+
+
+
 
             <!-- VR Headset Status -->
 
@@ -214,9 +220,6 @@
 
     </androidx.core.widget.NestedScrollView>
 
-
-
-    <!-- FOOTER -->
     <include
         android:id="@+id/footer"
         layout="@layout/footer" />

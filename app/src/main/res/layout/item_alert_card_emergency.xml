@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/primary_button"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="6dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false">
+
+        <!-- Cercles décoratifs -->
+        <View
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="-80dp"
+            android:background="@drawable/circle_ring_outer"
+            android:alpha="0.08" />
+
+        <View
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="-100dp"
+            android:background="@drawable/circle_ring_inner"
+            android:alpha="0.18" />
+
+        <!-- Contenu -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <ImageView
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_marginBottom="14dp"
+                android:src="@drawable/ic_warning_filled"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_active"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_description"
+                android:textColor="#CCffffff"
+                android:textSize="13sp"
+                android:lineSpacingMultiplier="1.35"
+                android:layout_marginBottom="24dp" />
+
+            <Button
+                android:id="@+id/btnViewIncident"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_white_pill"
+                android:elevation="0dp"
+                android:letterSpacing="0.08"
+                android:paddingStart="22dp"
+                android:paddingTop="11dp"
+                android:paddingEnd="22dp"
+                android:paddingBottom="11dp"
+                android:text="@string/view_full_incident"
+                android:textAllCaps="true"
+                android:textColor="@color/primary_button"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</androidx.cardview.widget.CardView>

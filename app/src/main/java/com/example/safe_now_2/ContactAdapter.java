@@ -61,16 +61,24 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
             context.startActivity(intent);
         });
 
-        // Bouton chat (SMS)
+        // ✅ MODIFIÉ : Bouton chat → SOS avec message pré-rempli
         holder.btnChat.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_SENDTO,
-                    Uri.parse("smsto:" + contact.telephone));
-            context.startActivity(intent);
+            if (context instanceof Contact_activity) {
+                // ✅ APPELE LA MÉTHODE SOS de l'Activity
+                ((Contact_activity) context).envoyerSOSAUnContact(contact.telephone, contact.nom);
+            } else {
+                // Fallback
+                Intent intent = new Intent(Intent.ACTION_SENDTO,
+                        Uri.parse("smsto:" + contact.telephone));
+                context.startActivity(intent);
+            }
         });
 
         // Long press → supprimer
         holder.itemView.setOnLongClickListener(v -> {
-            deleteListener.onDelete(contact.id, contact.nom);
+            if (deleteListener != null) {
+                deleteListener.onDelete(contact.id, contact.nom);
+            }
             return true;
         });
     }
