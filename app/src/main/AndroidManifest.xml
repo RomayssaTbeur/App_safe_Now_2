@@ -28,39 +28,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Safe_now_2">
 
-<!--        <activity android:name=".controller.SplashActivity"-->
-<!--            android:exported="true">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN"/>-->
-<!--                <category android:name="android.intent.category.LAUNCHER"/>-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-
-
-                <activity android:name=".controller.VrSimulationActivity"
-                    android:exported="true">
-                    <intent-filter>
-                        <action android:name="android.intent.action.MAIN"/>
-                        <category android:name="android.intent.category.LAUNCHER"/>
-                    </intent-filter>
-                </activity>
+        <activity android:name=".controller.VrSimulationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
 
         <activity android:name=".controller.LoginActivity"/>
         <activity android:name=".controller.HomeActivity"/>
 
-        <!--
-            OTP — thème light FORCÉ même en dark mode.
-            La clé est d'utiliser Theme.SafeNow.OTP qui est défini
-            UNIQUEMENT dans values/themes.xml (pas dans values-night/).
-            Android ne trouvera pas de version night → utilisera la light.
-        -->
         <activity
             android:name=".controller.OtpVerificationActivity"
             android:exported="false"
             android:theme="@style/Theme.SafeNow.OTP"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- MAIN -->
         <activity
             android:name=".controller.MainActivity"
             android:exported="false"
@@ -69,7 +53,6 @@
 
         <activity
             android:name=".unity.UnityActivity"
-            android:theme="@style/UnityThemeSelector"
             android:configChanges="orientation|screenSize|keyboardHidden|keyboard|smallestScreenSize|screenLayout|uiMode"
             android:hardwareAccelerated="true"
             android:exported="false"/>

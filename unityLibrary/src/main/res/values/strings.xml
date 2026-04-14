@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Unity cherche "app_name" pour s'initialiser.
-         S'il y a un conflit avec votre app principale,
-         gardez-le ici, le "Manifest Merger" s'en occupera -->
-    <string name="app_name">Safe_now_2</string>
+    <string name="unity_app_name">unityLibrary</string>
 
-    <!-- CETTE LIGNE EST SOUVENT MANQUANTE ET CAUSE LE CRASH 0x0 -->
+    <!-- Obligatoire pour Unity -->
     <string name="game_view_content_description">Game view</string>
 </resources>

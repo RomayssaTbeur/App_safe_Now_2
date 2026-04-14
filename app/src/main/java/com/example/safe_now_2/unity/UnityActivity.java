@@ -25,6 +25,25 @@ public class UnityActivity extends UnityPlayerActivity {
                 scenario            // FIRE / EARTHQUAKE
         );
     }
+
+//
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        unityPlayer.pause();
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        unityPlayer.resume();
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        unityPlayer.destroy();
+//    }
 }
 
 
