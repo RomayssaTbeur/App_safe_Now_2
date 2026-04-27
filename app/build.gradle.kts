@@ -47,7 +47,8 @@ dependencies {
     // 🔥 Firebase BoM + Auth
     implementation(platform("com.google.firebase:firebase-bom:34.11.0"))
     implementation("com.google.firebase:firebase-auth")
-
+    implementation(libs.play.services.location)
+    implementation("org.json:json:20210307")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

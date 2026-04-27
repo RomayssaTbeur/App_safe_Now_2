@@ -32,10 +32,10 @@ public class Contact_activity extends AppCompatActivity {
 
     private static final int PICK_CONTACT_REQUEST = 1;
     private static final int PERMISSION_REQUEST = 2;
-    private static final int LOCATION_REQUEST = 3;
+    public static final int LOCATION_REQUEST = 3;
 
     private ContactUrgenceDAO contactDAO;
-    private AlerteUrgenceDAO alerteDAO; // ✅ AJOUTÉ
+    private AlerteUrgenceDAO alerteDAO;
     private RecyclerView recyclerView;
     private ContactAdapter adapter;
     private List<ContactAdapter.ContactItem> contactList = new ArrayList<>();

@@ -571,6 +571,7 @@
                                 app:tint="@color/titre_principal" />
 
                             <TextView
+                                android:id="@+id/tv_map_subtitle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"

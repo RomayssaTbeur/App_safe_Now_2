@@ -25,6 +25,7 @@ import com.example.safe_now_2.utils.PermissionHelper;
 
 /**
  * ═══════════════════════════════════════════════════════════════
+ *
  * SplashActivity — CONTROLLER (MVC)
  *
  * Logique :
