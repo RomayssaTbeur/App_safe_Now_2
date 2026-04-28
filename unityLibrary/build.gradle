@@ -21,7 +21,7 @@ android {
         minSdkVersion 22
         targetSdkVersion 36
         ndk {
-            abiFilters 'armeabi-v7a', 'arm64-v8a'
+            abiFilters 'armeabi-v7a','arm64-v8a'
         }
         versionCode 1
         versionName '0.1'
@@ -32,10 +32,9 @@ android {
         abortOnError false
     }
 
-   aaptOptions {
-    noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.bundle', '.unityexp']
-    ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
-}
+    aaptOptions {
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.bundle', '.unityexp'] 
+    }
 
     packagingOptions {
         doNotStrip '*/armeabi-v7a/*.so'

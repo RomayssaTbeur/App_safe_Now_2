@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Safe_now_2"
 include(":app")
- 
+include(":unityLibrary")

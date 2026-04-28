@@ -50,11 +50,6 @@
             android:resizeableActivity="false"
             android:screenOrientation="fullUser"
             android:theme="@style/UnityThemeSelector" >
-
-            <!-- <intent-filter> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- </intent-filter> -->
             <meta-data
                 android:name="unityplayer.UnityActivity"
                 android:value="true" />

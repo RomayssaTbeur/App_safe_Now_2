@@ -236,7 +236,7 @@ public class HomeActivity extends AppCompatActivity {
         safeClick(R.id.btnContacts, v -> startActivity(new Intent(this, Contact_activity.class)));
         safeClick(R.id.btnHistory, v -> startActivity(new Intent(this, MainActivity.class)));
         safeClick(R.id.btnChecklist, v -> startActivity(new Intent(this, CheckListActivity.class)));
-        safeClick(R.id.btnSimulation, v -> Toast.makeText(this, "🚀 Simulation VR", Toast.LENGTH_SHORT).show());
+        safeClick(R.id.btnSimulation, v -> startActivity(new Intent(this, VrSimulationActivity.class)));
 
         // Toolbar
         setupToolbar();

@@ -74,11 +74,15 @@
                     android:layout_weight="1"
                     app:cardBackgroundColor="@color/scenario_card_bg"
                     app:cardCornerRadius="28dp"
-                    app:cardElevation="8dp">
+                    app:cardElevation="8dp"
+                    app:cardUseCompatPadding="false"
+                    app:cardPreventCornerOverlap="true">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:clipToOutline="true"
+                        android:background="@android:color/transparent">
 
                         <!-- Image de fond -->
                         <ImageView
@@ -104,7 +108,8 @@
                                 android:layout_height="30dp"
                                 android:layout_marginBottom="8dp"
                                 android:contentDescription="Fire icon"
-                                android:src="@drawable/ic_fire" />
+                                android:src="@drawable/ic_fire"
+                                android:clipToOutline="true"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -137,11 +142,15 @@
                     android:layout_weight="1"
                     app:cardBackgroundColor="@color/scenario_card_bg"
                     app:cardCornerRadius="28dp"
-                    app:cardElevation="4dp">
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="false"
+                    app:cardPreventCornerOverlap="true">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:clipToOutline="true"
+                        android:background="@android:color/transparent">
 
                         <!-- Image de fond -->
                         <ImageView
@@ -151,7 +160,8 @@
                             android:alpha="0.15"
                             android:contentDescription="Earthquake scenario"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/img_earthquake" />
+                            android:src="@drawable/img_earthquake"
+                            android:clipToOutline="true"/>
 
                         <!-- Contenu bas -->
                         <LinearLayout
