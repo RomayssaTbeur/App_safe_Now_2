@@ -1,9 +1,40 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Safe_now_2" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ════════════════════════════════════════════════════════════════
+         values-night/themes.xml
+         Mode sombre système → écrans Login ET OTP adoptent
+         le même style sombre cohérent (#353C3A).
+         ════════════════════════════════════════════════════════════════ -->
+
+    <!-- Theme principal dark -->
+    <style name="Theme.SafeNow" parent="Base.Theme.SafeNow">
+        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/dark_background</item>
     </style>
 
-    <style name="Theme.Safe_now_2" parent="Base.Theme.Safe_now_2" />
+    <!--
+        ════════════════════════════════════════════════════════════════
+        Theme OTP — MODE DARK
+        Adopte exactement le même style sombre que l'écran Login :
+        fond #353C3A, textes blancs, inputs #444D4B.
+        Le bouton Verify garde son fond navy #002A54 pour rester lisible.
+        ════════════════════════════════════════════════════════════════
+    -->
+    <style name="Theme.SafeNow.OTP" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/primary_fixed_dim</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorSurface">@color/dark_background</item>
+        <item name="colorOnSurface">@color/dark_on_surface</item>
+        <item name="colorError">@color/error</item>
+        <item name="android:colorBackground">@color/dark_background</item>
+        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/dark_background</item>
+        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="materialButtonStyle">@style/Widget.SafeNow.Button.Base</item>
+    </style>
+
 </resources>

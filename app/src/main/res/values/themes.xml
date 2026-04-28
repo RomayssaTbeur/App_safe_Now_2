@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Safe_now_2" parent="Theme.Material3.DayNight.NoActionBar">
@@ -15,7 +16,157 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:navigationBarColor">@color/background</item>
 
+
     </style>
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Base Theme (DayNight)
+         ══════════════════════════════════════════════════════════════ -->
+    <style name="Base.Theme.SafeNow" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">@color/primary_container</item>
+        <item name="colorOnPrimaryContainer">@color/on_primary_container</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_secondary</item>
+        <item name="colorTertiary">@color/tertiary</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant</item>
+        <item name="colorError">@color/error</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:navigationBarColor">@color/surface_container_lowest</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <!-- FIX : désactive Material You qui écrase les couleurs des boutons -->
+        <item name="materialButtonStyle">@style/Widget.SafeNow.Button.Base</item>
+    </style>
+
+    <style name="Theme.SafeNow" parent="Base.Theme.SafeNow" />
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Theme Login (fond sombre forcé)
+         ══════════════════════════════════════════════════════════════ -->
+    <style name="Theme.SafeNow.Login" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_container</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="android:colorBackground">@color/dark_background</item>
+        <item name="android:statusBarColor">@color/dark_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/dark_background</item>
+        <item name="android:windowBackground">@color/dark_background</item>
+        <item name="materialButtonStyle">@style/Widget.SafeNow.Button.Base</item>
+    </style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Theme OTP — CORRECTION : MaterialComponents et non Material3
+         ══════════════════════════════════════════════════════════════ -->
+    <style name="Theme.SafeNow.OTP" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_container</item>
+        <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorSurface">@color/surface</item>
+        <item name="colorOnSurface">@color/on_surface</item>
+        <item name="colorError">@color/error</item>
+        <item name="android:colorBackground">@color/surface</item>
+        <item name="android:statusBarColor">@color/surface</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/surface</item>
+        <item name="android:windowBackground">@color/surface</item>
+        <item name="android:fontFamily">@font/manrope</item>
+        <item name="materialButtonStyle">@style/Widget.SafeNow.Button.Base</item>
+    </style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Styles Typography
+         ══════════════════════════════════════════════════════════════ -->
+<!--    <style name="TextAppearance.SafeNow.TopBarTitle" parent="TextAppearance.Material3.TitleLarge">-->
+<!--        <item name="android:fontFamily">@font/space_grotesk</item>-->
+<!--        <item name="android:textSize">22sp</item>-->
+<!--        <item name="android:textColor">@color/primary</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--    </style>-->
+
+<!--    <style name="ShapeAppearance.SafeNow.Avatar" parent="">-->
+<!--        <item name="cornerSize">16dp</item>-->
+<!--    </style>-->
+
+<!--    <style name="TextStyle.Headline" parent="">-->
+<!--        <item name="android:fontFamily">@font/space_grotesk</item>-->
+<!--        <item name="android:textColor">@color/on_surface</item>-->
+<!--    </style>-->
+
+<!--    <style name="TextStyle.Body" parent="">-->
+<!--        <item name="android:fontFamily">@font/manrope</item>-->
+<!--        <item name="android:textColor">@color/on_surface</item>-->
+<!--    </style>-->
+
+<!--    <style name="TextStyle.Label" parent="">-->
+<!--        <item name="android:fontFamily">@font/manrope</item>-->
+<!--        <item name="android:textColor">@color/on_surface_variant</item>-->
+<!--    </style>-->
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Bouton BASE — parent de tous les boutons SafeNow
+         Parent MaterialComponents (pas Material3) = pas de Material You
+         ══════════════════════════════════════════════════════════════ -->
+    <style name="Widget.SafeNow.Button.Base" parent="Widget.MaterialComponents.Button">
+        <item name="android:fontFamily">@font/space_grotesk</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Bouton Primary (Send Code — écran Login)
+         ══════════════════════════════════════════════════════════════ -->
+    <style name="Widget.SafeNow.Button.Primary" parent="Widget.SafeNow.Button.Base">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">#00407A</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="elevation">8dp</item>
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Bouton Verify (écran OTP) — CORRECTION PRINCIPALE
+         Couleur hex directe pour contourner le bug Material You
+         ══════════════════════════════════════════════════════════════ -->
+    <style name="Widget.SafeNow.Button.Verify" parent="Widget.SafeNow.Button.Base">
+        <item name="backgroundTint">#002A54</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="cornerRadius">40dp</item>
+        <item name="elevation">8dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         Champs OTP
+         ══════════════════════════════════════════════════════════════ -->
+    <style name="Widget.SafeNow.OtpInput" parent="">
+        <item name="android:background">@drawable/bg_otp_input_adaptive</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/space_grotesk</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+
 
     <style name="Theme.Safe_now_2" parent="Base.Theme.Safe_now_2" />
 </resources>

@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_contact">
+
+    <!-- Header -->
+    <include
+        layout="@layout/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Page title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Emergency Contacts"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instant access to critical rescue services."
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- ── Police Card ──────────────────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_police"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="28dp"
+                app:cardBackgroundColor="#00407A"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- Image claire à droite -->
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:alpha="0.65"
+                        android:src="@drawable/icon_ploice"
+                        app:tint="#FFFFFF"
+                        android:scaleType="fitCenter"/>
+
+                    <!-- Overlay léger uniquement sur la moitié gauche pour lisibilité texte -->
+
+
+                    <!-- Contenu texte + boutons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center_vertical">
+
+                        <!-- Label catégorie -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="LAW ENFORCEMENT"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="#82ADEE"
+                            android:letterSpacing="0.10"
+                            android:layout_marginBottom="4dp"/>
+
+                        <!-- Titre -->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Police"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:layout_marginBottom="12dp"/>
+
+                        <!-- Boutons en ligne -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <!-- Chip numéro -->
+
+
+
+
+                            <!-- Bouton appel -->
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_call_police"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:text="Appeler"
+                                android:textAllCaps="false"
+                                android:textStyle="bold"
+                                android:textColor="#00407A"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                app:backgroundTint="#FFFFFF"
+                                app:cornerRadius="20dp"
+                                app:icon="@drawable/ic_call"
+                                app:iconTint="#00407A"
+                                app:iconPadding="6dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Ambulance Card ───────────────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_ambulance"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="28dp"
+                app:cardBackgroundColor="#B6171E"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:alpha="0.65"
+                        android:src="@drawable/healthcare"
+                        app:tint="#FFFFFF"
+                        android:scaleType="fitCenter"/>
+
+                    <View
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:background="#88B6171E"
+                        android:layout_alignParentStart="true"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MEDICAL EMERGENCY"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFACAC"
+                            android:letterSpacing="0.10"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ambulance"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:layout_marginBottom="12dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+
+
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_call_ambulance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:text="Appeler"
+                                android:textAllCaps="false"
+                                android:textStyle="bold"
+                                android:textColor="#B6171E"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                app:backgroundTint="#FFFFFF"
+                                app:cornerRadius="20dp"
+                                app:icon="@drawable/ic_call"
+                                app:iconTint="#B6171E"
+                                app:iconPadding="6dp"
+                                app:rippleColor="#22B6171E"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Fire Department Card ─────────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_fire"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginBottom="32dp"
+                app:cardCornerRadius="28dp"
+                app:cardBackgroundColor="#7A3000"
+                app:cardElevation="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:alpha="0.65"
+                        android:src="@drawable/icon_fire"
+                        app:tint="#FFFFFF"
+                        android:scaleType="fitCenter"/>
+
+                    <View
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:background="#887A3000"
+                        android:layout_alignParentStart="true"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="20dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FIRE &amp; RESCUE"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="#FC8F34"
+                            android:letterSpacing="0.10"
+                            android:layout_marginBottom="4dp"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fire Department"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            android:textColor="#FFFFFF"
+                            android:layout_marginBottom="12dp"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+
+
+
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_call_fire"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:text="Appeler"
+                                android:textAllCaps="false"
+                                android:textStyle="bold"
+                                android:textColor="#7A3000"
+                                android:paddingStart="16dp"
+                                android:paddingEnd="16dp"
+                                app:backgroundTint="#FFFFFF"
+                                app:cornerRadius="20dp"
+                                app:icon="@drawable/ic_call"
+                                app:iconTint="#7A3000"
+                                app:iconPadding="6dp"
+                                app:rippleColor="#227A3000"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- ── Trusted Circle Header ───────────────────────── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="24dp"
+                    android:background="#B6171E"
+                    android:layout_marginEnd="10dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Trusted Circle"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"/>
+
+                <TextView
+                    android:id="@+id/btn_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+ Add New"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_primary"
+                    android:background="#1A002A54"
+                    android:paddingStart="14dp"
+                    android:paddingEnd="14dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"/>
+            </LinearLayout>
+
+            <!-- RecyclerView contacts -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- ── Location Status Card ─────────────────────────── -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardBackgroundColor="@color/card_location_bg"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!-- Titre + icône GPS -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Location Sharing Active"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_primary"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="📍 LIVE"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="#B6171E"
+                            android:background="#15B6171E"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your current coordinates are being shared with your trusted contacts in case of an emergency call."
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary"
+                        android:lineSpacingMultiplier="1.4"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Chip coordonnées -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_coordinates_chip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp">
+
+                        <View
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:background="@drawable/bg_pulse_dot"
+                            android:layout_marginEnd="10dp"/>
+
+                        <TextView
+                            android:id="@+id/tv_coordinates"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Localisation en cours..."
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_on_surface"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Footer -->
+    <include
+        layout="@layout/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
