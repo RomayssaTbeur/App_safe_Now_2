@@ -313,7 +313,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             // Appel
-            Intent intent = new Intent(Intent.ACTION_DIAL);
+            Intent intent = new Intent(Intent.ACTION_CALL);
             intent.setData(Uri.parse("tel:" + numero));
             startActivity(intent);
 
