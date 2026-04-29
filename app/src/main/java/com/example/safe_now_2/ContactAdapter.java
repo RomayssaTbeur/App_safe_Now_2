@@ -56,7 +56,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
 
         // Bouton appel
         holder.btnCall.setOnClickListener(v -> {
-            Intent intent = new Intent(Intent.ACTION_DIAL,
+            Intent intent = new Intent(Intent.ACTION_CALL,
                     Uri.parse("tel:" + contact.telephone));
             context.startActivity(intent);
         });

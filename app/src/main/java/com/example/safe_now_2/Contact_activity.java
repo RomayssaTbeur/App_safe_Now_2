@@ -54,9 +54,9 @@ public class Contact_activity extends AppCompatActivity {
 
         // Initialisation
         prefs = getSharedPreferences("user_session", MODE_PRIVATE);
-        String userIdStr = prefs.getString("user_id", "1");
+        int userIdStr = prefs.getInt("user_id", 1);
         try {
-            UTILISATEUR_ID = Integer.parseInt(userIdStr);
+            UTILISATEUR_ID = userIdStr;
         } catch (NumberFormatException e) {
             UTILISATEUR_ID = 1;
         }

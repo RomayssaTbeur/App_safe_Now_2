@@ -93,9 +93,10 @@ public class HomeActivity extends AppCompatActivity {
 
     private void initUserSession() {
         prefs = getSharedPreferences("user_session", MODE_PRIVATE);
-        String userIdStr = prefs.getString("user_id", "1");
+        int userIdStr= prefs.getInt("user_id", 1);
+
         try {
-            UTILISATEUR_ID = Integer.parseInt(userIdStr);
+            UTILISATEUR_ID = userIdStr;
         } catch (NumberFormatException e) {
             UTILISATEUR_ID = 1;
         }
@@ -312,7 +313,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             // Appel
-            Intent intent = new Intent(Intent.ACTION_DIAL);
+            Intent intent = new Intent(Intent.ACTION_CALL);
             intent.setData(Uri.parse("tel:" + numero));
             startActivity(intent);
 
