@@ -25,11 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Contact_activity" />
+        <activity android:name=".controller.Contact_activity" />
         <activity android:name=".controller.LoginActivity" />
         <activity android:name=".controller.OtpVerificationActivity" />
         <activity android:name=".controller.HomeActivity" />
-        <activity android:name=".CheckListActivity" />
+        <activity android:name=".controller.CheckListActivity" />
         <activity android:name=".controller.MainActivity" />
         <activity android:name=".controller.VrSimulationActivity"/>
         <activity

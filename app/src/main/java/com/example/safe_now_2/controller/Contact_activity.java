@@ -314,7 +314,7 @@
 
 
 
-package com.example.safe_now_2;
+package com.example.safe_now_2.controller;
 
 import android.Manifest;
 import android.content.Intent;
@@ -336,8 +336,7 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.safe_now_2.controller.HomeActivity;
-import com.example.safe_now_2.controller.MainActivity;
+import com.example.safe_now_2.R;
 import com.example.safe_now_2.database.AlerteUrgenceDAO;
 import com.example.safe_now_2.database.ContactUrgenceDAO;
 

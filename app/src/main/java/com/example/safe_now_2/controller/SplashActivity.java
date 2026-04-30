@@ -15,8 +15,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.safe_now_2.CheckListActivity;
-import com.example.safe_now_2.Contact_activity;
 import com.example.safe_now_2.utils.PermissionDialogHelper;
 import com.google.android.material.button.MaterialButton;
 import com.example.safe_now_2.R;

@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,17 +18,12 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.safe_now_2.CheckListActivity;
-import com.example.safe_now_2.Contact_activity;
-import com.example.safe_now_2.controller.MainActivity;
 import com.example.safe_now_2.R;
 import com.example.safe_now_2.database.AlerteUrgenceDAO;
 import com.example.safe_now_2.database.ContactUrgenceDAO;
-import com.example.safe_now_2.utils.PermissionDialogHelper;
 import com.example.safe_now_2.utils.PermissionHelper;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -433,8 +427,8 @@ public class HomeActivity extends AppCompatActivity {
 //import androidx.core.app.ActivityCompat;
 //import androidx.core.content.ContextCompat;
 //
-//import com.example.safe_now_2.CheckListActivity;
-//import com.example.safe_now_2.Contact_activity;
+//import com.example.safe_now_2.controller.CheckListActivity;
+//import com.example.safe_now_2.controller.Contact_activity;
 //import com.example.safe_now_2.controller.MainActivity;
 //import com.example.safe_now_2.R;
 //import com.example.safe_now_2.database.AlerteUrgenceDAO;
