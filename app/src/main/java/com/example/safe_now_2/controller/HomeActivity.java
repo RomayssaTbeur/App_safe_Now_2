@@ -228,7 +228,7 @@ public class HomeActivity extends AppCompatActivity {
         // Cards
         safeClick(R.id.btnSOS, this::triggerSOS);
         safeClick(R.id.btnContacts, v -> startActivity(new Intent(this, Contact_activity.class)));
-        safeClick(R.id.btnHistory, v -> startActivity(new Intent(this, MainActivity.class)));
+        safeClick(R.id.btnHistory, v -> startActivity(new Intent(this, HistoriqueActivity.class)));
         safeClick(R.id.btnChecklist, v -> startActivity(new Intent(this, CheckListActivity.class)));
         safeClick(R.id.btnSimulation, v -> startActivity(new Intent(this, VrSimulationActivity.class)));
 
@@ -390,7 +390,7 @@ public class HomeActivity extends AppCompatActivity {
             finish();
         });
         findViewById(R.id.nav_history).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, HistoriqueActivity.class));
             finish();
         });
         findViewById(R.id.nav_checklist).setOnClickListener(v -> {

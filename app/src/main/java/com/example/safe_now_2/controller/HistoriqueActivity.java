@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.safe_now_2.R;
 
-public class MainActivity extends AppCompatActivity {
+public class HistoriqueActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             finish();
         });
         findViewById(R.id.nav_history).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, HistoriqueActivity.class));
             finish();
         });
         findViewById(R.id.nav_checklist).setOnClickListener(v -> {

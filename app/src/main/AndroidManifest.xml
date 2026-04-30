@@ -30,7 +30,7 @@
         <activity android:name=".controller.OtpVerificationActivity" />
         <activity android:name=".controller.HomeActivity" />
         <activity android:name=".controller.CheckListActivity" />
-        <activity android:name=".controller.MainActivity" />
+        <activity android:name=".controller.HistoriqueActivity" />
         <activity android:name=".controller.VrSimulationActivity"/>
         <activity
             android:name=".unity.UnityActivity"

@@ -268,7 +268,7 @@ public class CheckListActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.nav_history).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, HistoriqueActivity.class));
         });
 
         findViewById(R.id.nav_checklist).setOnClickListener(v -> {

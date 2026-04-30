@@ -617,7 +617,7 @@ public class Contact_activity extends AppCompatActivity {
             finish();
         });
         findViewById(R.id.nav_history).setOnClickListener(v -> {
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(this, HistoriqueActivity.class));
             finish();
         });
         findViewById(R.id.nav_checklist).setOnClickListener(v -> {
